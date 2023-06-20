@@ -27,6 +27,7 @@ def parse_md(file_path):
     types = []
     classNames = []
     contents = []
+    nullvalue = lambda x: None if(len(x) == 0) else x
     with open(file_path, 'r') as fn:
         flines = fn.readlines()
         for line in flines[2:]:
@@ -35,7 +36,7 @@ def parse_md(file_path):
             #temp = line.strip('\n').split(' ')[0]
             titles.append(strs[0].strip(' '))
             starts.append(strs[1].strip(' '))
-            ends.append(strs[2].strip(' '))
+            ends.append(nullvalue(strs[2].strip(' ')))
             groups.append(strs[3].strip(' '))
             types.append(strs[4].strip(' '))
             classNames.append(strs[5].strip(' '))
