@@ -31,7 +31,8 @@ def parse_md(file_path):
     with open(file_path, 'r') as fn:
         flines = fn.readlines()
         for line in flines[2:]:
-            print(line)
+            if(len(line.strip()) == 0):
+                continue 
             strs = line.split('|')
             #temp = line.strip('\n').split(' ')[0]
             titles.append(strs[0].strip(' '))
