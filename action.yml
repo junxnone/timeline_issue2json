@@ -52,7 +52,7 @@ runs:
         ${{ inputs.body }}
         EOF
         #pip3 install geopandas
-        wget https://raw.githubusercontent.com/junxnone/timeline_issue2json/fmap/issue2json.py
+        wget https://raw.githubusercontent.com/junxnone/timeline_issue2json/main/issue2json.py
         python3 issue2json.py -i "${{ inputs.dir }}"/"${POST_TITLE}".md -o "${{ inputs.dir }}"/"${POST_TITLE}".json
         rm issue2json.py
     - name: Push changes to repo
