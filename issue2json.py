@@ -65,5 +65,5 @@ if __name__ == "__main__":
                 }
         hjson.append(item)
     print(hjson)
-    with open(os.path.join(args.output,'history.json'), 'w') as f:
+    with open(args.output, 'w') as f:
         json.dump(hjson, f)
